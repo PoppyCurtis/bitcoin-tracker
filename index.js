@@ -15,7 +15,7 @@ app.post("/", function(req, res) {
     request(`https://apiv2.bitcoinaverage.com/indices/global/ticker/${crypto}${fiat}`, function(error, response, body) {
         var data = JSON.parse(body);
         var price = data.last;
-        res.send("<h1>The current price of Bitcoin is " + price + " USD</h1>")
+        res.send(`<h1>The current price of ${crypto} is ` + price + ` ${fiat}</h1>`)
     });
 });
 
